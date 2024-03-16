@@ -4,6 +4,13 @@ members = ["."]
 [workspace.dependencies]
 log = "0.4"
 dotenvy = "0.15"
+tokio = { version = "1", features = ["full"] }
+anyhow = "1.0"
+thiserror = "1.0"
+chrono = "0.4"
+
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1"
 
 [package]
 name = "backend"
@@ -13,5 +20,18 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+log = { workspace = true }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tracing-log = "0.2"
+
 dotenvy ={ workspace = true }
+tokio ={ workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+chrono = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
 diesel = { version = "2.1", features = ["postgres"] }
+axum = { version = "0.7", features = ["multipart"] }
